@@ -21,6 +21,12 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    scope: {
+        type: Object
+    }
+  },
+  mounted () {
+      console.log('Inner scope ', this.scope);
   },
   data() {
     return {
@@ -34,7 +40,7 @@ export default {
   watch: {
     testParams(newValue, oldValue) {
       if (newValue !== oldValue) {
-        console.log('Change ', newValue);
+        console.log('Watch change ', newValue);
       }
     }
   },
@@ -45,13 +51,11 @@ export default {
   },
   methods: {
     test() {
-      console.log('Test success')
-      this.$emit('closeTest')
+      console.log('Method called successfully')
       if (this.changedParam === 2) {
         this.testParams = '2'
       }
-
-      console.log('Test params ', this.testParams);
+      this.$root.$emit('closeTest')
     }
   },
 };
