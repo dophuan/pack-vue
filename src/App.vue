@@ -46,7 +46,7 @@ export default {
   methods: {
     test() {
       console.log('Test success')
-      this.$root.$emit('closeTest')
+      this.$emit('closeTest')
       if (this.changedParam === 2) {
         this.testParams = '2'
       }
