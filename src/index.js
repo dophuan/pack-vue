@@ -1,8 +1,10 @@
 import Vue from 'vue'
-import App from './App.vue'
+import Banner from './App.vue'
+import AnotherBanner from './Test.vue'
 
 const comps = {
-    App
+    Banner,
+    AnotherBanner
 }
 
 Object.keys(comps).forEach(name => {

@@ -1,5 +1,5 @@
 <template>
-  <div class="banner" id="mainApp" :style="bannerStyles" :class="`banner__${position}`">
+  <div class="banner-wrapper" id="banner2nd" :style="bannerStyles" :class="`banner__${position}`">
     <slot></slot>
   </div>
 </template>
@@ -30,22 +30,16 @@ export default {
       },
     };
   },
-  methods: {
-    test() {
-      console.log('Test success')
-      this.$root.$emit('closeTest')
-    }
-  },
 };
 </script>
 <style lang="scss" scoped>
-.banner {
-  padding: 12px;
-  background-color: #fcf6cd;
-  color: #f6a623;
-  text-align: left;
-  position: fixed;
-  z-index: 2;
+.banner-wrapper {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: orange;
+    background-color: peachpuff;
+    padding: 5px 10px;
+    
 }
 .banner__top {
   top: 0;
