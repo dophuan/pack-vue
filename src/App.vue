@@ -28,12 +28,28 @@ export default {
         ...defaultStyles,
         ...this.styles,
       },
+      testParams: ''
     };
+  },
+  watch: {
+    testParams(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        console.log('Change ', newValue);
+      }
+    }
+  },
+  computed: {
+    changedParam() {
+      return 2
+    }
   },
   methods: {
     test() {
       console.log('Test success')
-      this.$root.$emit('closeTest')
+      if (this.changedParam === 2) {
+        testParams = '2'
+        console.log('Test params ', this.testParams);
+      }
     }
   },
 };
