@@ -47,7 +47,7 @@ export default {
     test() {
       console.log('Test success')
       if (this.changedParam === 2) {
-        testParams = '2'
+        this.testParams = '2'
       }
 
       console.log('Test params ', this.testParams);
